@@ -7,7 +7,6 @@ const postModel = require('./model/post');
 const cors = require('cors');
 const multer = require('multer');
 
-
 // middleware
 app.use(bodyParser.json({limit: "30mb"}));
 app.use(bodyParser.urlencoded({extended: true}));
