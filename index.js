@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const postModel = require('./model/post');
 const cors = require('cors');
 const multer = require('multer');
+const clientURL = "https://image-upload-ds.herokuapp.com"
 
 // middleware
 app.use(bodyParser.json({limit: "30mb"}));
@@ -83,7 +84,7 @@ app.post('/post', (req, res) => {
                 created: "" + Date.now()
             })
             post.save()
-            .then(() => res.redirect('/home'))
+            .then(() => res.redirect(`${clientURL}/home`))
             .catch(err => console.log(err));
         }
     });
