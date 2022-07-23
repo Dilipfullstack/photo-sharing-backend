@@ -1,0 +1,28 @@
+.post-wrapper{
+    border: 1px solid black;
+    width: 350px;
+    height: 350px;
+    margin: 25px auto;
+    padding: 5px 15px;
+}
+
+.name {
+    font-weight: bolder;
+    font-size: large;
+}
+
+.place {
+    color: gray;
+    font-size: small;
+}
+
+.icons {
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+    vertical-align: middle;
+}
+
+.iconsanddate {
+    text-align: left;
+}

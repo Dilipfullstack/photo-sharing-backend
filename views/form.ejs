@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <style>
+        .wrapper {
+            border: 1px solid black;
+            max-width: 450px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .formdata {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <form action="/post" method="POST" enctype="multipart/form-data">
+            <input class="formdata" type="file" placeholder="No File Chosen" name="myFile"/><br/>
+            <input class="formdata" type="text" placeholder="Author" name="name" size="20%" />
+            <input class="formdata" type="text" placeholder="Location" name="location" size="20%" style="margin-left: 19px;"/><br/>
+            <input class="formdata" type="text" placeholder="Description" name="description" size="50%"/><br/>
+            <button class="formdata" type="submit" >Post</button>
+        </form>
+    </div>
+</body>
+</html>

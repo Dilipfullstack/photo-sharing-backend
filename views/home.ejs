@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="/public/assets/style.css" rel="stylesheet"  type="text/css" />
+</head> 
+<body>
+    <div class="wrapper">
+        <%for(let i = data.length - 1; i >= 0; i--) {%>
+            <div class="post-wrapper">
+                <div class="name"><%=data[i].name%></div>
+                <div class="place"><%=data[i].location%></div>
+                <div class="image"><%=data[i].postImage%></div>
+                <div class="iconsanddate"><span><img class="icons" src="/public/icons/like.png" alt="like icon"/></span>  <span ><img class="icons" src="/public/icons/share.png" alt="share icon"/></span><span><%= data[i].date %></span></div>
+                <div class="likes"><%=data[i].likes%></div>
+            </div>
+        <%}%>
+    </div>
+</body>
+</html>
