@@ -6,7 +6,10 @@ const bodyParser = require('body-parser');
 const postModel = require('./model/post');
 const cors = require('cors');
 const multer = require('multer');
-const clientURL = "https://image-upload-ds.herokuapp.com"
+const dotenv = require('dotenv');
+dotenv.config();
+const clientURL = "https://image-upload-ds.herokuapp.com";
+// const clientURL = "http://localhost:3000"
 
 // middleware
 app.use(bodyParser.json({limit: "30mb"}));
@@ -20,7 +23,7 @@ app.use(cors());
 app.set('view engine', 'ejs');
 
 // database connect
-mongoose.connect('mongodb+srv://Dilip:imageupload123@cluster0.krtlwb0.mongodb.net/?retryWrites=true', () => {
+mongoose.connect(process.env.MONGO_URI, () => {
     console.log('connected to DB insta_clone')
 });
 
@@ -147,15 +150,14 @@ app.post("/upload", (req, res)=> {
     uploadModel.create(req.body).then((data)=> {
         res.status(200).send(data)
 })
-})
+});
 
 app.get("/images", (req, res)=> {
     uploadModel.find().then((imageData)=> {
         res.status(200).send({images: imageData})
     })
-})
-
-app.listen(process.env.PORT ||3001, () => {
-    console.log('server started on port 3001');
 });
 
+app.listen(process.env.PORT || 3001, () => {
+    console.log('server started on port 3001');
+});

@@ -27,6 +27,6 @@ const PostSchema = mongoose.Schema({
 //     date: String
 // });
 
-const post = mongoose.model('post', PostSchema);
+const post = mongoose.model('instapost', PostSchema);
 
 module.exports = post;
